@@ -214,8 +214,9 @@ bool BlkDev::support_discard() const
 
 int BlkDev::discard(int64_t offset, int64_t len) const
 {
-  uint64_t range[2] = {(uint64_t)offset, (uint64_t)len};
-  return ioctl(fd, BLKDISCARD, range);
+  // uint64_t range[2] = {(uint64_t)offset, (uint64_t)len};
+  // return ioctl(fd, BLKDISCARD, range);
+  return fallocate(fd, FALLOC_FL_PUNCH_HOLE | FALLOC_FL_KEEP_SIZE, offset, len);
 }
 
 int BlkDev::get_optimal_io_size() const

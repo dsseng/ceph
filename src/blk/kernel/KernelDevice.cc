@@ -288,6 +288,7 @@ int KernelDevice::open(const string& p)
       derr << "unable to get device name for " << path << ": "
 	<< cpp_strerror(r) << dendl;
       rotational = true;
+      support_discard = true;
     } else {
       dout(20) << __func__ << " devname " << devname << dendl;
       rotational = blkdev_buffered.is_rotational();
