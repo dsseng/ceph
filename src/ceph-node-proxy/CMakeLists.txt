@@ -16,7 +16,7 @@ add_custom_command(
 add_custom_command(
   OUTPUT ${CEPH_NODE_PROXY_VIRTUALENV}/bin/ceph-node-proxy
   DEPENDS ${CEPH_NODE_PROXY_VIRTUALENV}/bin/python
-  COMMAND . ${CEPH_NODE_PROXY_VIRTUALENV}/bin/activate && ${CEPH_NODE_PROXY_VIRTUALENV}/bin/python setup.py develop && deactivate
+  COMMAND . ${CEPH_NODE_PROXY_VIRTUALENV}/bin/activate && ${CEPH_NODE_PROXY_VIRTUALENV}/bin/python -m pip install -e . && deactivate
   WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}/src/ceph-node-proxy
   COMMENT "${CMAKE_SOURCE_DIR}/src/ceph-node-proxy")
 

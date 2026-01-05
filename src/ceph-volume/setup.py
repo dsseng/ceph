@@ -15,7 +15,7 @@ setup(
     url="https://github.com/ceph/ceph",
     zip_safe = False,
     install_requires=[
-        'ceph',
+        # 'ceph',
         'packaging',
     ],
     dependency_links=[''.join(['file://', os.path.join(os.getcwd(), '../',
@@ -23,7 +23,7 @@ setup(
     tests_require=[
         'pytest >=2.1.3',
         'tox',
-        'ceph',
+        # 'ceph',
     ],
     entry_points = dict(
         console_scripts = [
