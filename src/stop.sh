@@ -194,10 +194,10 @@ if [ $stop_all -eq 1 ]; then
         fi
     fi
 
-    daemons="$(sudo $CEPHADM ls 2> /dev/null)"
-    if [ $? -eq 0 -a "$daemons" != "[]" ]; then
-        do_killcephadm
-    fi
+    # daemons="$(sudo $CEPHADM ls 2> /dev/null)"
+    # if [ $? -eq 0 -a "$daemons" != "[]" ]; then
+    #     do_killcephadm
+    # fi
 
     # killing processes
     to_kill="$ceph_osd ceph-mon ceph-mds ceph-mgr radosgw lt-radosgw apache2 ganesha.nfsd cephfs-top cephfs-mirror rbd-mirror"
