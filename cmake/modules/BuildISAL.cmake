@@ -3,7 +3,7 @@ function(build_isal)
   set(isal_BINARY_DIR ${CMAKE_BINARY_DIR}/src/isa-l)
   set(isal_INSTALL_DIR ${isal_BINARY_DIR}/install)
   set(isal_INCLUDE_DIR "${isal_INSTALL_DIR}/include")
-  set(isal_LIBRARY "${isal_INSTALL_DIR}/lib/libisal.a")
+  set(isal_LIBRARY "${isal_INSTALL_DIR}/lib64/libisal.a")
 
   # this include directory won't exist until the install step, but the
   # imported targets need it early for INTERFACE_INCLUDE_DIRECTORIES

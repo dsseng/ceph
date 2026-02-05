@@ -357,7 +357,7 @@ if(WITH_BREAKPAD)
     # since breakpad artifacts are not redistributed in the final package.
     INSTALL_COMMAND ${CMAKE_COMMAND} -E env --unset=DESTDIR ${make_cmd} install
     UPDATE_DISCONNECTED ON
-    BUILD_BYPRODUCTS "<INSTALL_DIR>/lib/libbreakpad_client.a")
+    BUILD_BYPRODUCTS "<INSTALL_DIR>/lib64/libbreakpad_client.a")
 
   ExternalProject_Get_Property(breakpad_project INSTALL_DIR)
   # create the directory so cmake won't complain when looking at the imported
@@ -374,7 +374,7 @@ if(WITH_BREAKPAD)
     # add ${INSTALL_DIR}/include/breakpad as well.
     INTERFACE_INCLUDE_DIRECTORIES "${INSTALL_DIR}/include;${INSTALL_DIR}/include/breakpad"
     IMPORTED_LINK_INTERFACE_LANGUAGES "CXX"
-    IMPORTED_LOCATION "${INSTALL_DIR}/lib/libbreakpad_client.a")
+    IMPORTED_LOCATION "${INSTALL_DIR}/lib64/libbreakpad_client.a")
 
   # for header-only library
   add_library(Breakpad::breakpad INTERFACE IMPORTED GLOBAL)
